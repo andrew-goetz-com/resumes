@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andrew Goetz - Resume</title>
+<style>
+  @page {
+    margin: 0.5in;
+    size: letter;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    font-weight: 400;
+    color: #2d2d2d;
+    font-size: 9.5pt;
+    line-height: 1.45;
+    background: #fff;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .resume-container {
+    max-width: 8.5in;
+    margin: 0 auto;
+    padding: 0.4in 0.5in;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 3px solid #1a3a5c;
+    padding-bottom: 14px;
+    margin-bottom: 16px;
+  }
+
+  .header-left h1 {
+    font-size: 24pt;
+    font-weight: 700;
+    color: #1a3a5c;
+    letter-spacing: -0.3px;
+    margin-bottom: 2px;
+  }
+
+  .header-left .label {
+    font-size: 11pt;
+    color: #4a7ab5;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .header-left .location {
+    font-size: 9pt;
+    color: #666;
+  }
+
+  .header-right {
+    text-align: right;
+    font-size: 9pt;
+    color: #444;
+    padding-top: 6px;
+  }
+
+  .header-right a {
+    color: #1a3a5c;
+    text-decoration: none;
+  }
+
+  .header-right div {
+    margin-bottom: 3px;
+  }
+
+  /* Summary */
+  .summary {
+    background: #f4f7fb;
+    border-left: 4px solid #4a7ab5;
+    padding: 10px 14px;
+    margin-bottom: 18px;
+    font-size: 9.5pt;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  /* Section Titles */
+  .section-title {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #1a3a5c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1.5px solid #d0dce8;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+    margin-top: 16px;
+  }
+
+  .section-title:first-of-type {
+    margin-top: 0;
+  }
+
+  /* Skills Grid */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+    margin-bottom: 4px;
+  }
+
+  .skill-group {
+    margin-bottom: 4px;
+  }
+
+  .skill-category {
+    font-weight: 700;
+    font-size: 9pt;
+    color: #1a3a5c;
+    margin-bottom: 2px;
+  }
+
+  .skill-keywords {
+    font-size: 9pt;
+    color: #444;
+    line-height: 1.5;
+  }
+
+  /* Work Experience */
+  .job {
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+
+  .job-title {
+    font-weight: 700;
+    font-size: 10pt;
+    color: #1a3a5c;
+  }
+
+  .job-date {
+    font-size: 9pt;
+    color: #777;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+
+  .job-company {
+    font-size: 9.5pt;
+    color: #4a7ab5;
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+
+  .job-summary {
+    font-size: 9pt;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 4px;
+  }
+
+  .job ul {
+    padding-left: 16px;
+    margin: 0;
+  }
+
+  .job li {
+    font-size: 9pt;
+    margin-bottom: 2px;
+    color: #333;
+  }
+
+  .job li::marker {
+    color: #4a7ab5;
+  }
+
+  /* Projects */
+  .project {
+    margin-bottom: 12px;
+    page-break-inside: avoid;
+  }
+
+  .project-name {
+    font-weight: 700;
+    font-size: 10pt;
+    color: #1a3a5c;
+    margin-bottom: 1px;
+  }
+
+  .project-tech {
+    font-size: 9pt;
+    color: #4a7ab5;
+    margin-bottom: 3px;
+  }
+
+  .project-desc {
+    font-size: 9pt;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 4px;
+  }
+
+  .project ul {
+    padding-left: 16px;
+  }
+
+  .project li {
+    font-size: 9pt;
+    margin-bottom: 2px;
+    color: #333;
+  }
+
+  .project li::marker {
+    color: #4a7ab5;
+  }
+
+  /* Education & Awards */
+  .edu-item,
+  .award-item {
+    margin-bottom: 8px;
+  }
+
+  .edu-title,
+  .award-title {
+    font-weight: 700;
+    font-size: 9.5pt;
+    color: #1a3a5c;
+  }
+
+  .edu-institution,
+  .award-awarder {
+    font-size: 9pt;
+    color: #4a7ab5;
+    font-weight: 600;
+  }
+
+  .edu-highlights,
+  .award-summary {
+    font-size: 9pt;
+    color: #444;
+    padding-left: 16px;
+    margin-top: 2px;
+  }
+
+  .edu-highlights li,
+  .award-summary {
+    margin-bottom: 1px;
+  }
+
+  .two-col-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 30px;
+  }
+</style>
+</head>
+<body>
+<div class="resume-container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <h1>Andrew Goetz</h1>
+      <div class="label">AI & LLM Enthusiast</div>
+      <div class="location">Spokane, Washington, US</div>
+    </div>
+    <div class="header-right">
+      <div><a href="mailto:andrew@agiagui.com">andrew@agiagui.com</a></div>
+      <div>509-290-0370</div>
+      <div><a href="https://www.linkedin.com/in/andrewgoetz" target="_blank">linkedin.com/in/andrewgoetz</a></div>
+	  <div><a href="https://andrew-goetz.com" target="_blank">andrew-goetz.com</a></div>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="summary">
+    Technical operations professional with 15+ years of experience spanning IT infrastructure, software development, and AI integration. Passionate AI enthusiast with hands-on experience leveraging OpenAI and OpenRouter APIs, prompt engineering, and building applications on various platforms. Proven track record of managing end-to-end technical deployments, building internal tooling, and coordinating cross-functional teams in fast-paced environments. Combines deep systems knowledge with a bias to ship and a developer-experience mindset.
+  </div>
+
+  <!-- Skills -->
+  <div class="section-title">Technical Skills</div>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-category">AI &amp; LLM Technologies</div>
+      <div class="skill-keywords">OpenAI API, OpenRouter, Prompt Engineering, AI Integration &amp; Use Case Identification, LLM Application Development, Firebase, </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-category">Programming Languages &amp; Frameworks</div>
+      <div class="skill-keywords">Python, JavaScript, TypeScript, PHP, C#, PowerShell, HTML/CSS, jQuery, .NET, Flutter</div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-category">APIs, Testing &amp; DevOps</div>
+      <div class="skill-keywords">LangFuse, REST API Integration, API Testing, Git, QA &amp; Test Planning, Automated Scripting</div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-category">Databases</div>
+      <div class="skill-keywords">MSSQL, MySQL, MongoDB, SQL Query Optimization, Database Replication, Database Monitoring, Index Optimization</div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-category">Cloud &amp; Infrastructure</div>
+      <div class="skill-keywords">Microsoft 365, Azure Active Directory, Digital Ocean, Railway, VMware ESXi, Veeam, SharePoint</div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-category">Operations &amp; Process</div>
+      <div class="skill-keywords">End-to-End Launch Playbooks, Technical Documentation, Process Automation, Cross-Functional Coordination, Release Management, Migration Planning, Incident Management, Customer Relations</div>
+    </div>
+  </div>
+
+  <!-- Experience -->
+  <div class="section-title">Professional Experience</div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">IT Administrator</span>
+      <span class="job-date">Jan 2023 – Present</span>
+    </div>
+    <div class="job-company">ALK</div>
+    <div class="job-summary">Provide architectural guidance and spearhead AI integration into business solutions for an international organization.</div>
+    <ul>
+      <li>Collaborated with line of business stakeholders to identify and evaluate potential AI use cases, driving adoption of AI-powered solutions across the organization.</li>
+      <li>Developed automated PowerShell scripts to streamline system administration tasks, reducing manual effort and improving operational efficiency.</li>
+      <li>Served as IT liaison between US business units, global IT security, and infrastructure services, coordinating cross-functional launches and deployments.</li>
+      <li>Created advanced SQL queries for reporting on legacy systems, supporting data-driven decision-making and archival processes.</li>
+      <li>Provided technical guidance and architectural advice for new technology implementations across the corporate network.</li>
+      <li>Member of subject matter expert groups for Power Platform, Exchange, databases, Microsoft Teams, and AI & Automations</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">System Administrator</span>
+      <span class="job-date">Feb 2018 – Jan 2023</span>
+    </div>
+    <div class="job-company">Spokane Industries</div>
+    <div class="job-summary">Managed full IT infrastructure for 100+ employees, executing complex migrations and deploying cloud-based solutions.</div>
+    <ul>
+      <li>Executed end-to-end migration playbooks for Exchange (2010 → 2016 → 2019 → Online Hybrid), SharePoint, and cloud phone systems with minimal downtime.</li>
+      <li>Deployed Microsoft 365 tenant including SharePoint, OneDrive, Teams, Azure AD, and Exchange Online, managing versioning and release coordination.</li>
+      <li>Deployed Aruba wireless network with cloud-based Aruba Central administration, demonstrating cloud/observability skills.</li>
+      <li>Migrated TFS 2013 to 2018 and maintained Git-based development workflows.</li>
+      <li>Built and maintained deployment packages for ERP systems, ensuring quality checks and documentation for each release.</li>
+      <li>Administered VMware ESXi, Palo Alto firewalls, DNS, DHCP, and Group Policy across the entire infrastructure.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Software Engineer</span>
+      <span class="job-date">Aug 2016 – Apr 2017</span>
+    </div>
+    <div class="job-company">The Master's Touch, LLC</div>
+    <div class="job-summary">Developed features for a public-facing electronic notice system hosted on AWS in a LAMP stack environment.</div>
+    <ul>
+      <li>Built new features and resolved defects in a Linux, Apache, MySQL, and PHP environment with production hosted on AWS.</li>
+      <li>Implemented security hardening against SQL injection attacks across all new inputs.</li>
+      <li>Resolved performance issues by optimizing SQL queries, implementing new indexes, and rewriting methods to reduce database impact.</li>
+      <li>Submitted code to Git repositories and documented requirements and bug fixes in TFS.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Software Developer</span>
+      <span class="job-date">Jan 2013 – Mar 2016</span>
+    </div>
+    <div class="job-company">Imprezzio Inc.</div>
+    <div class="job-summary">Full-stack software development for a product used in production at a Fortune 500 company.</div>
+    <ul>
+      <li>Developed software using C#, MSSQL, MongoDB, .NET, and Adobe Flex for enterprise-grade production applications.</li>
+      <li>Conceptualized and built a PHP + MySQL + jQuery internal tooling solution to support business operations.</li>
+      <li>Pushed web application code and database changes to production environments, managing release processes.</li>
+      <li>Provided Tier 3 level technical support and mentored Tier 1 and Tier 2 support representatives.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Internal Support / Tier 2 Production Support</span>
+      <span class="job-date">Dec 2009 – Jan 2013</span>
+    </div>
+    <div class="job-company">Imprezzio Inc.</div>
+    <div class="job-summary">Built internal tools, reporting dashboards, and managed infrastructure while providing escalated technical support.</div>
+    <ul>
+      <li>Developed a reporting website providing ticket statistics and call metrics using MySQL, PHP, JavaScript, and jQuery.</li>
+      <li>Architected and built a feature-rich customer management application for internal use.</li>
+      <li>Deployed MySQL instances and configured database replication across Linux and Windows environments.</li>
+      <li>Wrote database monitoring scripts to alert technicians of issues and automated backup processes.</li>
+      <li>Documented processes and procedures used in daily operations, priming them for team-wide adoption.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Software Quality Assurance Engineer</span>
+      <span class="job-date">Dec 2007 – Dec 2009</span>
+    </div>
+    <div class="job-company">Jigsaw</div>
+    <div class="job-summary">Performed manual and automated testing, database analysis, and API testing for a production SaaS application.</div>
+    <ul>
+      <li>Discovered, documented, and tested hundreds of critical defects through manual testing, automated testing, database analysis, and API testing.</li>
+      <li>Recipient of the MVP award for Q1 2008.</li>
+      <li>Played a large role in creating a bug tracking and analysis system in Salesforce.com.</li>
+    </ul>
+  </div>
+
+  <!-- Projects -->
+  <div class="section-title">Projects</div>
+  
+  <div class="project">
+  <div class="project-name">AI Model Experimentation & Tooling</div>
+  <div class="project-desc">
+    Built scripts and prototypes to test and integrate AI models across APIs, focusing on performance, reliability, and developer experience.
+  </div>
+  <ul>
+    <li>Tested and compared model behavior across different prompts, latency profiles, and response formats.</li>
+    <li>Built lightweight tools for interacting with APIs via cURL, scripts, and real-time pipelines.</li>
+    <li>Debugged API responses, authentication flows, and streaming behavior in production environments.</li>
+  </ul>
+</div>
+
+<div class="project">
+  <div class="project-name">TalkWithAGI.com</div>
+  <div class="project-tech">TypeScript · React 19 · Next.js 15 · Node.js · WebRTC · mediasoup · OpenAI API · Three.js/GLSL · Supabase · Capacitor</div>
+  <div class="project-desc">
+    Real-time AI voice communication platform enabling natural conversations between users and AI participants, with live transcription and multi-language translation.
+  </div>
+  <ul>
+    <li>Supports multi-party voice and video communication using WebRTC SFU architecture with mediasoup.</li>
+    <li>Delivers sub-second speech-to-speech AI interactions via OpenAI Realtime API with automatic language detection.</li>
+    <li>Provides live transcription and translation across multiple languages with synchronized captions.</li>
+    <li>Features dynamic 3D AI presence using Three.js and custom GLSL shaders for immersive interaction.</li>
+    <li>Implements scalable backend with Supabase (PostgreSQL), real-time subscriptions, authentication, and row-level security.</li>
+    <li>Structured as a TypeScript monorepo with Turborepo and pnpm workspaces for efficient development.</li>
+    <li>Deploys via Docker multi-stage builds with automated mobile CI/CD pipelines using Capacitor and Codemagic.</li>
+  </ul>
+</div>
+
+<div class="project">
+  <div class="project-name">Legends of Britain - rpgclient.agigui.com</div>
+  <div class="project-tech">TypeScript · Three.js · Vite · HTML5/CSS · Node.js · Express 5 · Colyseus · SQLite · better-sqlite3 · bcrypt · Mixamo</div>
+  <div class="project-desc">
+    Real-time 3D multiplayer PvP game featuring fast-paced combat, persistent world systems, and authoritative server architecture.
+  </div>
+  <ul>
+    <li>Implements authoritative client-server multiplayer using Colyseus with WebSocket-based real-time synchronization.</li>
+    <li>Runs 60 FPS server-side simulation with 30 FPS state updates using schema-based serialization for performance.</li>
+    <li>Delivers interactive 3D gameplay with Three.js, including character rendering, animation blending, and asset pipelines.</li>
+    <li>Supports real-time combat systems including spells, projectiles, and hit detection.</li>
+    <li>Includes drag-and-drop inventory with persistence, NPC interactions, and corpse looting mechanics.</li>
+    <li>Uses SQLite with secure authentication via bcrypt for player data and session management.</li>
+    <li>Shares TypeScript types across client and server for consistency and maintainability.</li>
+  </ul>
+</div>
+
+  <!-- Education & Awards -->
+  <div class="two-col-bottom">
+    <div>
+      <div class="section-title">Interests</div>
+      <div class="edu-item">
+        <div class="edu-title">AI Model Experimentation & Evaluation</div>
+        <div class="edu-institution">Self-Directed / Professional Development</div>
+        <ul class="edu-highlights">
+          <li>Actively experiment with frontier models across providers, comparing performance, latency, and output quality using LangFuse.</li>
+          <li>Interested in prompt design, response behavior, and real-world application tradeoffs.</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="section-title">Awards</div>
+      <div class="award-item">
+        <div class="award-title">MVP Award Q1 2008</div>
+        <div class="award-awarder">Jigsaw · March 2008</div>
+        <div class="award-summary">Recognized for outstanding contributions to software quality assurance, including discovery and documentation of hundreds of critical defects.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body></html>
